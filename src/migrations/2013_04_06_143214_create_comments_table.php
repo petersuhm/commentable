@@ -12,13 +12,9 @@ class CreateCommentsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('comments', function(Blueprint $table)
+		Schema::create('petersuhm_commentable_comments', function(Blueprint $table)
 		{
 			$table->increments('id');
-
-			$table->text('body');
-
-			$table->timestamps();
 		});
 	}
 
@@ -29,7 +25,7 @@ class CreateCommentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('comments');
+		Schema::drop('petersuhm_commentable_comments');
 	}
 
 }
