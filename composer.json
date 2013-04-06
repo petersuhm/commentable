@@ -1,0 +1,23 @@
+{
+    "name": "petersuhm/commentable",
+    "description": "Comments model for Laravel 4",
+    "authors": [
+        {
+            "name": "Peter Suhm",
+            "email": "peter@suhm.dk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Petersuhm\\Commentable": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
