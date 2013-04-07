@@ -18,4 +18,13 @@ class CommentTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals('foo', $comment->commentable());
     }
+
+    public function testAuthorable()
+    {
+        m::mock('Illuminate\Database\Eloquent\Model');
+        $comment = m::mock('Petersuhm\Commentable\Comment[morphTo]');
+        $comment->shouldReceive('morphTo')->once()->andReturn('foo');
+
+        $this->assertEquals('foo', $comment->authorable());
+    }
 }

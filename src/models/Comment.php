@@ -10,4 +10,9 @@ class Comment extends Eloquent {
     {
         return $this->morphTo();
     }
+
+    public function authorable()
+    {
+        return $this->morphTo();
+    }
 }
