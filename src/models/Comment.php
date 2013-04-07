@@ -1,8 +1,8 @@
 <?php namespace Petersuhm\Commentable;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Eloquent {
+class Comment extends Model implements CommentInterface {
 
     protected $fillable = array('body');
 

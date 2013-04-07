@@ -1,34 +1,24 @@
 <?php
 
 use Mockery as m;
-use Petersuhm\Commentable\Comment;
 
-class CommentTest extends PHPUnit_Framework_TestCase {
+class CommentableTest extends PHPUnit_Framework_TestCase {
 
     public function tearDown()
     {
         m::close();
     }
 
-    public function testCommentable()
+    public function testComments()
     {
         m::mock('Illuminate\Database\Eloquent\Model');
-        $comment = m::mock('Petersuhm\Commentable\Comment[morphTo]');
-        $comment->shouldReceive('morphTo')->once()->andReturn('foo');
+        $commentable = m::mock('Petersuhm\Commentable\Commentable[morphMany]');
+        $commentable->shouldReceive('morphMany')->with('Comment', 'commentable')->once()->andReturn('foo');
 
-        $this->assertEquals('foo', $comment->commentable());
+        $this->assertEquals('foo', $commentable->comments());
     }
 
-    public function testAuthorable()
-    {
-        m::mock('Illuminate\Database\Eloquent\Model');
-        $comment = m::mock('Petersuhm\Commentable\Comment[morphTo]');
-        $comment->shouldReceive('morphTo')->once()->andReturn('foo');
-
-        $this->assertEquals('foo', $comment->authorable());
-    }
-
-    public function testStaticAdd()
+    public function testAddComment()
     {
         $body = 'Testkommentar';
         $authorable = new Petersuhm\Commentable\Authorable;
@@ -37,7 +27,7 @@ class CommentTest extends PHPUnit_Framework_TestCase {
         $authorable->id = 10;
         $commentable->id = 20;
 
-        $comment = Comment::add($body, $authorable, $commentable);
+        $comment = $commentable->addComment($body, $authorable);
 
         $this->assertEquals('Testkommentar', $comment->body);
         $this->assertEquals(10, $comment->authorable_id);
