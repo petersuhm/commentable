@@ -6,7 +6,7 @@ class Authorable extends Model implements AuthorableInterface {
 
     public function comments()
     {
-        return $this->morphMany('Comment', 'commentable');
+        return $this->morphMany('Comment', 'authorable');
     }
 
     public function addComment($body, $commentable)
