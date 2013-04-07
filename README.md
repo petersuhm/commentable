@@ -9,6 +9,7 @@ Commentable is a comments model for Laravel 4.
     * [Adding comments](#adding-comments)
     * [Retrieving comments](#retrieving-comments)
 * [Advanced usage](#advanced-usage)
+* [Support and suggestions](#support-and-suggestions)
 
 ## Installation
 
