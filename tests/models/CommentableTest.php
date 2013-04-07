@@ -31,8 +31,8 @@ class CommentableTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals('Testkommentar', $comment->body);
         $this->assertEquals(10, $comment->authorable_id);
-        $this->assertEquals(get_class($authorable), $comment->authorable_type);
+        $this->assertEquals('Petersuhm\Commentable\Authorable', $comment->authorable_type);
         $this->assertEquals(20, $comment->commentable_id);
-        $this->assertEquals(get_class($commentable), $comment->commentable_type);
+        $this->assertEquals('Petersuhm\Commentable\Commentable', $comment->commentable_type);
     }
 }
