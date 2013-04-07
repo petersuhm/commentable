@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Authorable extends Model {
+class Authorable extends Model implements AuthorableInterface {
 
     public function comments()
     {

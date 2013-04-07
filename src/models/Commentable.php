@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Commentable extends Model {
+class Commentable extends Model implements CommentableInterface {
 
     public function comments()
     {
