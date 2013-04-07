@@ -10,4 +10,22 @@ class Comment extends Eloquent {
     {
         return $this->morphTo();
     }
+
+    public function authorable()
+    {
+        return $this->morphTo();
+    }
+
+    public static function add($body, $authorable, $commentable)
+    {
+        $comment = new Comment;
+
+        $comment->body = $body;
+        $comment->authorable_id = $authorable->id;
+        $comment->authorable_type = get_class($authorable);
+        $comment->commentable_id = $commentable->id;
+        $comment->commentable_type = get_class($commentable);
+
+        return $comment;
+    }
 }
