@@ -153,3 +153,8 @@ $commentable->comments()->first()->toArray();
 
 If you wish to overwrite the `Comment` class provided by Commentable, you can do
 so by implementing the `CommentInterface`interface in your own `Comment` model.
+
+## Support and suggestions
+
+If you have any problems, or if you have some suggestions,
+discover a bug etc., feel free to open an issue!
