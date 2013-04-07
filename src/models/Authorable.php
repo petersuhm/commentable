@@ -1,3 +1,11 @@
-<?php
+<?php namespace Petersuhm\Commentable;
 
-class Authorable extends Eloquent {}
+use Illuminate\Database\Eloquent\Model;
+
+class Authorable extends Model {
+
+    public function comments()
+    {
+        return $this->morphMany('Comment', 'commentable');
+    }
+}
