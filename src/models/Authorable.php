@@ -8,4 +8,9 @@ class Authorable extends Model {
     {
         return $this->morphMany('Comment', 'commentable');
     }
+
+    public function addComment($body, $commentable)
+    {
+        return Comment::add($body, $this, $commentable);
+    }
 }

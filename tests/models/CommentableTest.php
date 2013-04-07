@@ -17,4 +17,22 @@ class CommentableTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals('foo', $commentable->comments());
     }
+
+    public function testAddComment()
+    {
+        $body = 'Testkommentar';
+        $authorable = new Petersuhm\Commentable\Authorable;
+        $commentable = new Petersuhm\Commentable\Commentable;
+
+        $authorable->id = 10;
+        $commentable->id = 20;
+
+        $comment = $commentable->addComment($body, $authorable);
+
+        $this->assertEquals('Testkommentar', $comment->body);
+        $this->assertEquals(10, $comment->authorable_id);
+        $this->assertEquals(get_class($authorable), $comment->authorable_type);
+        $this->assertEquals(20, $comment->commentable_id);
+        $this->assertEquals(get_class($commentable), $comment->commentable_type);
+    }
 }
