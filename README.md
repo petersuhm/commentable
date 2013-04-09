@@ -146,8 +146,8 @@ Thanks to Eloquent, you can retrieve comments just like you would expect:
 $authorable = User::first();
 $commentable = BlogPost::first();
 
-$authorable->comments()->first()->toArray();
-$commentable->comments()->first()->toArray();
+$authorable->comments;
+$commentable->comments;
 ```
 
 ## Advanced usage
