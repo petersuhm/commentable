@@ -159,3 +159,7 @@ so by implementing the `CommentInterface`interface in your own `Comment` model.
 
 If you have any problems, or if you have some suggestions,
 discover a bug etc., feel free to open an issue!
+
+## Changelog
+
+* __Added indexes to comments table__: Run `composer update` followed by `php artisan migrate --package=petersuhm/commentable`.
