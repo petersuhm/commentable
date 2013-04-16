@@ -103,7 +103,7 @@ class User extends Eloquent implements AuthorableInterface {
     }
 }
 
-class BlogPost extends Eloquent implements CommentableCommentable {
+class BlogPost extends Eloquent implements CommentableInterface {
     
     public function comments()
     {
