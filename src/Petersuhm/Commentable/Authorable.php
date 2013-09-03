@@ -1,6 +1,7 @@
 <?php namespace Petersuhm\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
+use Petersuhm\Commentable\Interfaces\AuthorableInterface;
 
 class Authorable extends Model implements AuthorableInterface {
 

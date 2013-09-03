@@ -92,11 +92,11 @@ interfaces. This way, you will not be able to use the helper methods from
 to use Commentable's interfaces, declare your models this way:
 
 ```php
-use Petersuhm\Commentable\AuthorableInterface;
-use Petersuhm\Commentable\CommentableCommentable;
+use Petersuhm\Commentable\Interfaces\AuthorableInterface;
+use Petersuhm\Commentable\Interfaces\CommentableInterface;
 
 class User extends Eloquent implements AuthorableInterface {
-    
+
     public function comments()
     {
         return $this->morphMany('Comment', 'authorable');
@@ -104,7 +104,7 @@ class User extends Eloquent implements AuthorableInterface {
 }
 
 class BlogPost extends Eloquent implements CommentableInterface {
-    
+
     public function comments()
     {
         return $this->morphMany('Comment', 'commentable');

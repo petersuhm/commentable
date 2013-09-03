@@ -1,4 +1,4 @@
-<?php namespace Petersuhm\Commentable;
+<?php namespace Petersuhm\Commentable\Interfaces;
 
 interface AuthorableInterface {
 
