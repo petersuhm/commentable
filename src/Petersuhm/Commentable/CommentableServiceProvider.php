@@ -28,7 +28,7 @@ class CommentableServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['commentable.comment'] = new Petersuhm\Commentable\Comment();
 	}
 
 	/**

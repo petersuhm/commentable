@@ -1,6 +1,7 @@
 <?php namespace Petersuhm\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
+use Petersuhm\Commentable\Interfaces\CommentInterface;
 
 class Commentable extends Model implements CommentableInterface {
 
